@@ -16,26 +16,29 @@ public class NavigationHelperRun extends DriverBasedHelper implements Navigation
 	@Override
 	public void openMainPage() {
 		driver.get(baseUrl);
-		
 	}
 
 	@Override
-	public void openBasket() {
+	public void gotoBasketPage() {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
 	public void gotoUserProfilePage() {
-		driver.findElement(By.id("shop")).click();
-	    driver.findElement(By.linkText("Personal details")).click();
+		pages.everyPage.ensurePageLoaded().clickUserProfilePage();
 		
 	}
 
 	@Override
-	public void gotoUserSeachPage() {
-		// TODO Auto-generated method stub
+	public void gotoUserBuyBookPage() {
+		pages.everyPage.ensurePageLoaded().clickBuyBookPage();
 		
+	}
+
+	@Override
+	public void gotoHomePage() {
+		pages.everyPage.ensurePageLoaded().clickhomePageLink();
 	}
 
 }

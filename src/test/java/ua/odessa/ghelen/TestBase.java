@@ -2,6 +2,7 @@ package ua.odessa.ghelen;
 
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeSuite;
 
 import ua.odessa.ghelen.applicationlogic.ApplicationManager;
 import ua.odessa.ghelen.applicationlogiclevel_0.ApplicationManagerLevel_0;
@@ -11,7 +12,7 @@ public class TestBase {
 
   protected ApplicationManager app;
 
-	@BeforeClass
+	@BeforeSuite
 	public void init() {
 		app = new ApplicationManagerRun();
 	}

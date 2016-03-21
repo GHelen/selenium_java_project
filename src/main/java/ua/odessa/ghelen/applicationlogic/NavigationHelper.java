@@ -3,7 +3,8 @@ package ua.odessa.ghelen.applicationlogic;
 public interface NavigationHelper {
 
 	void openMainPage();
-	  void openBasket();
+	  void gotoBasketPage();
 	  void gotoUserProfilePage();
-	  void gotoUserSeachPage();
+	  void gotoUserBuyBookPage();
+	  void gotoHomePage();
 }

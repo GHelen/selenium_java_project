@@ -20,7 +20,7 @@ public class ApplicationManagerRun implements ApplicationManager {
 	  
 public ApplicationManagerRun() {
 		  
-	baseUrl = PropertyLoader.loadProperty("site.url");
+  baseUrl = PropertyLoader.loadProperty("site.url");
   String gridHubUrl = PropertyLoader.loadProperty("grid2.hub");
 
   Browser browser = new Browser();
@@ -32,11 +32,12 @@ public ApplicationManagerRun() {
   String password = PropertyLoader.loadProperty("user.password");
   
   driver = WebDriverFactory.getInstance(gridHubUrl, browser, username, password);
-  driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
-
-		userHelper = new UserHelperRun(this);
-		navigationHelper = new NavigationHelperRun(this);
-		getNavigationHelper().openMainPage();
+  driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+  
+  userHelper = new UserHelperRun(this);
+  navigationHelper = new NavigationHelperRun(this);
+  getNavigationHelper().openMainPage();
+  driver.manage().window().maximize();
 }
 		@Override
 		public UserHelper getUser() {

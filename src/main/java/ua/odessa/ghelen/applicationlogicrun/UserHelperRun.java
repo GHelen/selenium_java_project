@@ -23,19 +23,15 @@ private ApplicationManagerRun manager;
 	
 	@Override
 	public void loginAs(User user) {
-		driver.findElement(By.cssSelector("div.master-wrapper-content")).click();
-	    driver.findElement(By.id("login")).click();
-	    driver.findElement(By.id("Email")).clear();
-	    driver.findElement(By.id("Email")).sendKeys(user.getLogin());
-	    driver.findElement(By.id("Password")).clear();
-	    driver.findElement(By.id("Password")).sendKeys(user.getPassword());
-	    driver.findElement(By.xpath("//div[5]/input")).click();
+        pages.everyPage.clickLoginLink().setLoginField(user.getLogin())
+	    .setPasswordField(user.getPassword())
+	    .clickSubmitButton();
 
 	}
 
 	@Override
 	public void logout() {
-		driver.findElement(By.id("logOut")).click();
+		pages.everyPage.clickLogoutLink().clickLogoutLink();
 	}
 
 	@Override
